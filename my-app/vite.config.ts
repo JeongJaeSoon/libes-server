@@ -12,10 +12,13 @@ export default defineConfig(({ mode }) => {
       federation({
         name: 'host-app',
         remotes: {
-          libesServer: `${env.VITE_REMOTE_URL}/dist/assets/remoteEntry.js`,
+          libesServer: `${env.VITE_REMOTE_URL}/assets/remoteEntry.js`,
         },
         shared: ['react', 'react-dom'],
       }),
     ],
+    build: {
+      target: 'esnext',
+    },
   };
 });
