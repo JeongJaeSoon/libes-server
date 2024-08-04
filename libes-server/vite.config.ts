@@ -10,12 +10,13 @@ export default defineConfig({
       name: 'remote-app',
       filename: 'remoteEntry.js',
       exposes: {
-        './Button': './src/shared/Button',
+        './Button': './src/shared/RemoteButton',
       },
       shared: ['react', 'react-dom'],
     }),
   ],
   build: {
     target: 'esnext',
+    cssCodeSplit: false,
   },
 });
